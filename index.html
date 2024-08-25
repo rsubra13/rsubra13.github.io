@@ -188,6 +188,21 @@
                 flex-direction: row;
                 justify-content: space-between;
             }
+
+            .management-skills p {
+                margin-bottom: 0.3rem;
+                /* Adjust space between paragraphs */
+                line-height: 1.4;
+                /* Adjust line height for readability */
+                text-align: justify;
+            }
+
+            .management-skills strong {
+                display: block;
+                /* Ensure heading is on its own line */
+                margin-bottom: 0.2rem;
+                /* Space between heading and paragraph text */
+            }
     </style>
 </head>
 
@@ -391,9 +406,9 @@
             <div class="right-column">
                 <div class="content">
                     <div class="section-title">Education</div>
-                    <p><strong>Master of Computer Science - May 2015</strong> <br> Arizona State University – Tempe, AZ
+                    <p><strong>Master of Computer Science (2015)</strong> <br> Arizona State University – Tempe, AZ
                     </p>
-                    <p><strong>Bachelor’s in Computer Science & Engineering - May 2009</strong> <br> SASTRA University –
+                    <p><strong>Bachelor’s in Computer Science & Engineering (2009)</strong> <br> SASTRA University –
                         Thanjavur,
                         India</p>
                 </div>
@@ -413,41 +428,37 @@
                 <div class="divider"></div>
                 <div class="content">
                     <div class="section-title">Skills</div>
-                    <p><strong>Technical Skills</strong></p>
-                    <ul>
-                        <li><strong>Programming Languages/Web Technologies:</strong> Ruby/Rails, Python, Django, Flask,
+                    <div class="management-skills">
+                        <h6><strong>Technical Skills</strong></h6>
+                        <p><strong>Programming Languages/Web Technologies:</strong> Ruby/Rails, Python, Django, Flask,
                             Bash
-                            scripting, HTML5/CSS, JavaScript, ReactJS, Bootstrap, Agile methodologies, Git.</li>
-                        <li><strong>Databases/Datastores:</strong> MySQL, SQLite, PostgreSQL, MongoDB (Certified
+                            scripting, HTML5/CSS, JavaScript, ReactJS, Bootstrap, Agile methodologies, Git.</p>
+                        <p><strong>Databases/Datastores:</strong> MySQL, SQLite, PostgreSQL, MongoDB (Certified
                             Developer),
-                            Elasticsearch, Redis, DynamoDB.</li>
-                        <li><strong>Hadoop & ETL Technologies:</strong> Hive, Impala, HBase, Apache Airflow,
+                            Elasticsearch, Redis, DynamoDB.</p>
+                        <p><strong>Hadoop & ETL Technologies:</strong> Hive, Impala, HBase, Apache Airflow,
                             Elasticsearch, Apache
-                            Kafka, Celery, RabbitMQ.</li>
-                        <li><strong>Data Wrangling:</strong> Dask, Pandas, NumPy, JupyterLab.</li>
-                        <li><strong>DevOps:</strong> Terraform, Docker, Vagrant, Supervisor, Fabric, AWS
-                            EC2/S3/EBS/RDS/IAM/SAM/Lambda, Serverless, Jenkins CI/CD, Slack Notifications.</li>
-                        <li><strong>Open Source Contributions:</strong> Tethne, Ansible, Apache Airflow.</li>
-                    </ul>
+                            Kafka, Celery, RabbitMQ.</p>
+                        <p><strong>Data Wrangling:</strong> Dask, Pandas, NumPy, JupyterLab.</p>
+                        <p><strong>DevOps:</strong> Terraform, Docker, Vagrant, Supervisor, Fabric, AWS
+                            EC2/S3/EBS/RDS/IAM/SAM/Lambda, Serverless, Jenkins CI/CD, Slack Notifications.</p>
+                        <p><strong>Open Source Contributions:</strong> Tethne, Ansible, Apache Airflow.</p>
+                    </div>
                     <div class="divider"></div>
-                    <p><strong>Management/Leadership Skills</strong></p>
-                    <ul>
-                        <li><strong>Team Development:</strong> Mentoring and training junior developers, PR and code
-                            reviews, weekly
-                            assessment sessions.</li>
-                        <li><strong>Project Management:</strong> Helping Product Owner in sprint planning and tasks
-                            assignment for
-                            team members.</li>
-                        <li><strong>Project Design:</strong> Designed and spearheaded architecture of many data pipeline
-                            projects
-                            and Virtual Events.</li>
-                        <li><strong>Internal Stakeholder Interactions:</strong> Technical presentations and POC with
-                            Business
-                            Managers and Directors for high-scale projects.</li>
-                        <li><strong>External Stakeholder Interactions:</strong> Interaction with product team and
-                            marketing team for
-                            building ideas and design.</li>
-                    </ul>
+                    <div class="management-skills">
+                        <h6><strong>Management/Leadership Skills</strong></h6>
+                        <p><strong>Team Development:</strong> Mentoring and training junior developers, PR and code
+                            reviews, weekly assessment sessions.</p>
+                        <p><strong>Project Management:</strong> Helping Product Owner in sprint planning and tasks
+                            assignment for team members.</p>
+                        <p><strong>Project Design:</strong> Designed and spearheaded architecture of many data pipeline
+                            projects and Virtual Events.</p>
+                        <p><strong>Internal Stakeholder Interactions:</strong> Technical presentations and POC with
+                            Business Managers and Directors for high-scale projects.</p>
+                        <p><strong>External Stakeholder Interactions:</strong> Interaction with product team and
+                            marketing team for building ideas and design.</p>
+                    </div>
+
                     <div class="divider"></div>
                 </div>
             </div>
