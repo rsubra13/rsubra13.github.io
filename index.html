@@ -35,6 +35,55 @@
             /* Reduced font size */
         }
 
+        .summary-list {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0;
+            list-style: none;
+            margin: 0;
+        }
+
+        .summary-list li {
+            flex: 1 1 23%;
+            /* Adjust width to fit 4 items per line */
+            margin: 5px 0;
+            /* Reduced margin to decrease line spacing */
+            box-sizing: border-box;
+            position: relative;
+            /* Required for positioning the custom bullet */
+            padding-left: 1.5em;
+            /* Space for the custom bullet */
+        }
+
+        .summary-list li::before {
+            content: '•';
+            /* Custom bullet point */
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            /* Vertically center the bullet */
+            font-size: 1.2em;
+            /* Adjust bullet size */
+            color: black;
+            /* Customize bullet color */
+        }
+
+        .summary-list li:nth-child(4n) {
+            margin-right: 0;
+            /* Remove margin on the right of the last item in each row */
+        }
+
+        @media (max-width: 600px) {
+            .summary-list li {
+                flex: 1 1 100%;
+                /* On smaller screens, each item takes full width */
+                margin: 5px 0;
+                /* Maintain reduced line spacing */
+            }
+        }
+
+
         .container {
             padding: 20px;
         }
@@ -104,7 +153,10 @@
         }
 
         .job-description li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
+            /* Adjust as needed */
+            line-height: 1.4;
+            /* Adjust line height for tighter spacing */
         }
 
         .company-name,
@@ -156,14 +208,17 @@
             <div class="left-column">
                 <div class="content">
                     <div class="section-title">Summary</div>
-                    <p>Senior Full Stack Engineer with 12+ years of professional experience focusing on Software
-                        Development and
-                        expertise in:</p>
-                    <ul>
-                        <li><strong>Python:</strong> Scalable & Optimized REST APIs</li>
-                        <li><strong>Modern Serverless Stack/DevOps</strong></li>
-                        <li><strong>ReactJS</strong></li>
-                        <li><strong>Data Modeling & Data Engineering</strong></li>
+                    <p>Senior Full Stack Engineer with 14+ years of professional experience focusing on Software
+                        Development specializing in:</p>
+                    <ul class="summary-list">
+                        <li>Scalable REST APIs</li>
+                        <li>Serverless DevOps</li>
+                        <li>Python, ReactJS</li>
+                        <li>Data Engineering</li>
+                        <li>Optimized Workflows</li>
+                        <li>Cloud Architecture</li>
+                        <li>CI/CD Pipelines</li>
+                        <li>Team Leadership</li>
                     </ul>
                 </div>
                 <div class="divider"></div>
@@ -336,10 +391,11 @@
             <div class="right-column">
                 <div class="content">
                     <div class="section-title">Education</div>
-                    <p><strong>Master of Computer Science</strong> <br> Arizona State University – Tempe, AZ <br>
-                        Conferred: May 2015</p>
-                    <p><strong>Bachelor’s in Computer Science & Engineering</strong> <br> SASTRA University – Thanjavur,
-                        India <br> Conferred: May 2009</p>
+                    <p><strong>Master of Computer Science - May 2015</strong> <br> Arizona State University – Tempe, AZ
+                    </p>
+                    <p><strong>Bachelor’s in Computer Science & Engineering - May 2009</strong> <br> SASTRA University –
+                        Thanjavur,
+                        India</p>
                 </div>
                 <div class="divider"></div>
                 <div class="content">
