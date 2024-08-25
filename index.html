@@ -59,6 +59,59 @@
         .right-column {
             width: 30%;
         }
+
+        .job-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .job-header {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .job-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .job-title {
+            font-weight: bold;
+            margin-right: 2rem;
+        }
+
+        .job-timeline {
+            font-weight: bold;
+            margin-left: 6rem;
+        }
+
+        .job-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .job-description {
+            list-style-type: none;
+            padding: 0;
+            text-align: justify;
+        }
+
+        .job-description li {
+            margin-bottom: 0.5rem;
+        }
+
+        .company-name,
+        .job-location {
+            font-style: italic;
+            color: #666;
+        }
+
+        .divider {
+            border-bottom: 2px solid #7fa3b7;
+            margin-top: 1rem;
+        }
     </style>
 </head>
 
@@ -75,122 +128,187 @@
 
 
     <div class="container">
-        <!-- <div class="content">
-            <div class="section-title">Summary</div>
-            <p>Senior Full Stack Engineer with 12+ years of professional experience focusing on Software Development and
-                expertise in:</p>
-            <ul>
-                <li><strong>Python:</strong> Scalable & Optimized REST APIs</li>
-                <li><strong>Modern Serverless Stack/DevOps</strong></li>
-                <li><strong>ReactJS</strong></li>
-                <li><strong>Data Modeling & Data Engineering</strong></li>
-            </ul>
-        </div> -->
-
         <div class="two-column">
             <div class="left-column">
                 <div class="content">
-                    <div class="section-title">Professional Experience</div>
-                    <p><strong>Senior Full Stack Engineer / Senior Site Reliability Engineer – Certn</strong> <br> March
-                        2022 – Current <br> Vancouver,
-                        Canada</p>
+                    <div class="section-title">Summary</div>
+                    <p>Senior Full Stack Engineer with 12+ years of professional experience focusing on Software
+                        Development and
+                        expertise in:</p>
                     <ul>
-                        <li>Designed and developed high-performance Django Rest Framework APIs with extensive test
-                            coverage using
-                            pytest.</li>
-                        <li>Led the successful integration of ReactJS front-end with Django back-end across multiple
-                            projects.</li>
-                        <li>Performed SRE duties to enhance site performance for legacy systems while integrating new
-                            technologies.
-                        </li>
-                        <li>Conducted legacy API performance testing, wrote Terraform scripts for infrastructure
-                            management, and
-                            utilized AWS monitoring, New Relic, OpenSearch, and Sentry for metrics and performance
-                            optimization.
-                        </li>
-                        <li>Managed complete project lifecycle, including gathering requirements, communicating with
-                            stakeholders,
-                            and defining technical specifications.</li>
-                        <li>Architected and implemented backend solutions with Django and ReactJS, focusing on high
-                            performance and
-                            scalability.</li>
-                        <li>Defined technical details and acceptance criteria for development stories, ensuring timely
-                            and
-                            high-quality feature completion through effective cross-functional collaboration.</li>
-                    </ul>
-                    <p><strong>Senior Full Stack Engineer – Attendease</strong> <br> June 2019 – Current <br> Vancouver,
-                        Canada</p>
-                    <ul>
-                        <li>Ruby on Rails / React JS Full stack development with focus on Microservices/Serverless
-                            workflows in Python.</li>
-                        <li>Optimization of legacy APIs, PostgreSQL DB tuning, Application performance tuning, Analytics
-                            module design and development from scratch.</li>
-                        <li>Virtual events requirement analysis, vendor PoC, architecture design, implementation with
-                            ReactJS, AWS Lambda/Serverless pipelines.</li>
-                        <li>Multi-environment platform infrastructure development and maintenance using Terraform.</li>
-                    </ul>
-
-                    <p><strong>Senior Software Engineer – DISH Network - Colorado, USA</strong></p>
-                    <p><strong>June 2015 – May 2019</strong></p>
-                    <ul>
-                        <li>Design, build, create, and maintain Python ETL real-time and batch processing data pipelines
-                            using
-                            Apache Airflow, Kafka, Elasticsearch, MySQL, MongoDB, Apache Hive, Impala.</li>
-                        <li>Experienced in Hadoop Map-R cluster and wrote complex queries using Hive, Impala, Pandas,
-                            and Dask to
-                            extract data for customer reports and visualize using Matplotlib. DevOps experience using
-                            Fabric,
-                            Supervisor, and Terraform in the AWS environment.</li>
-                        <li>Developed REST APIs for dishanywhere.com, the online portal of DISH.</li>
-                        <li>Worked with a large-scale Hadoop application for handling the dashboard of day-to-day trends
-                            in
-                            dishanywhere.com.</li>
-                        <li>Built internal web application using Django, ReactJS, and Elasticsearch for data curators.
-                        </li>
-                    </ul>
-
-                    <p><strong>Software Developer – Digital Innovation Group - Arizona State University, Tempe,
-                            USA</strong></p>
-                    <p><strong>Sep 2013 – May 2015</strong></p>
-                    <ul>
-                        <li>Contributed to NSF Funded open-source citation analysis project – ‘Tethne’ by developing a
-                            Flask web
-                            application.</li>
-                        <li>Developed various citation networks such as bibliographic coupling, author-paper and
-                            co-author networks,
-                            various directed, undirected and Multi graphs using Networkx package.</li>
-                        <li>Used PyUnit for test-driven development and developed Google python-style compliant code
-                            along with
-                            Pylint and agile software development using Pivotal tracker.</li>
-                    </ul>
-
-                    <p><strong>Software Development Intern – HiringSolved - Arizona, USA</strong></p>
-                    <p><strong>May 2014 – Aug 2014</strong></p>
-                    <ul>
-                        <li>Developed a Job search engine using Flask web framework, HTML5/CSS/Twitter Bootstrap,
-                            jQuery, PostgreSQL
-                            and deployed it in AWS EC2 instance where recruiters can post jobs and search suitable
-                            candidates, and
-                            candidates can apply through resume or LinkedIn (REST API).</li>
-                        <li>Deployed the web application with Nginx as web server/reverse proxy for handling requests,
-                            Gunicorn as
-                            WSGI HTTP server, Fabric for application deployment, and Supervisor for process control and
-                            monitoring
-                            the application.</li>
-                    </ul>
-
-                    <p><strong>Senior Software Developer – WIPRO Technologies - Bangalore, India</strong></p>
-                    <p><strong>Feb 2010 – Jul 2013</strong></p>
-                    <ul>
-                        <li>Developed Python UI modules using Python ‘Snack’ library on top of RHEL for a custom
-                            proprietary OS.
-                        </li>
+                        <li><strong>Python:</strong> Scalable & Optimized REST APIs</li>
+                        <li><strong>Modern Serverless Stack/DevOps</strong></li>
+                        <li><strong>ReactJS</strong></li>
+                        <li><strong>Data Modeling & Data Engineering</strong></li>
                     </ul>
                 </div>
+                <div class="divider"></div>
+                <div class="content">
+                    <div class="section-title">Professional Experience</div>
 
+                    <!-- Senior Full Stack Engineer / Senior Site Reliability Engineer -->
+                    <div class="job-details">
+                        <div class="job-header">
+                            <div class="job-info">
+                                <span class="job-title">Senior Full Stack Engineer / Senior Site Reliability
+                                    Engineer</span>
+                                <span class="job-timeline">March 2022 – Current</span>
+                            </div>
+                            <div class="job-meta">
+                                <span class="company-name">Certn</span>
+                                <span class="job-location">Vancouver, Canada</span>
+                            </div>
+                        </div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Designed and developed high-performance Django Rest Framework APIs with extensive
+                                    test coverage using pytest.</li>
+                                <li>Led the successful integration of ReactJS front-end with Django back-end across
+                                    multiple projects.</li>
+                                <li>Performed SRE duties to enhance site performance for legacy systems while
+                                    integrating new technologies.</li>
+                                <li>Conducted legacy API performance testing, wrote Terraform scripts for infrastructure
+                                    management, and utilized AWS monitoring, New Relic, OpenSearch, and Sentry for
+                                    metrics and performance optimization.</li>
+                                <li>Managed complete project lifecycle, including gathering requirements, communicating
+                                    with stakeholders, and defining technical specifications.</li>
+                                <li>Architected and implemented backend solutions with Django and ReactJS, focusing on
+                                    high performance and scalability.</li>
+                                <li>Defined technical details and acceptance criteria for development stories, ensuring
+                                    timely and high-quality feature completion through effective cross-functional
+                                    collaboration.</li>
+                            </ul>
+                        </div>
+                    </div>
 
+                    <!-- Senior Full Stack Engineer – Attendease -->
+                    <div class="job-details">
+                        <div class="job-header">
+                            <div class="job-info">
+                                <span class="job-title">Senior Full Stack Engineer</span>
+                                <span class="job-timeline">June 2019 – Current</span>
+                            </div>
+                            <div class="job-meta">
+                                <span class="company-name">Attendease</span>
+                                <span class="job-location">Vancouver, Canada</span>
+                            </div>
+                        </div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Ruby on Rails / React JS Full stack development with focus on
+                                    Microservices/Serverless workflows in Python.</li>
+                                <li>Optimization of legacy APIs, PostgreSQL DB tuning, Application performance tuning,
+                                    Analytics module design and development from scratch.</li>
+                                <li>Virtual events requirement analysis, vendor PoC, architecture design, implementation
+                                    with ReactJS, AWS Lambda/Serverless pipelines.</li>
+                                <li>Multi-environment platform infrastructure development and maintenance using
+                                    Terraform.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Senior Software Engineer – DISH Network -->
+                    <div class="job-details">
+                        <div class="job-header">
+                            <div class="job-info">
+                                <span class="job-title">Senior Software Engineer</span>
+                                <span class="job-timeline">June 2015 – May 2019</span>
+                            </div>
+                            <div class="job-meta">
+                                <span class="company-name">DISH Network</span>
+                                <span class="job-location">Colorado, USA</span>
+                            </div>
+                        </div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Design, build, create, and maintain Python ETL real-time and batch processing data
+                                    pipelines using Apache Airflow, Kafka, Elasticsearch, MySQL, MongoDB, Apache Hive,
+                                    Impala.</li>
+                                <li>Experienced in Hadoop Map-R cluster and wrote complex queries using Hive, Impala,
+                                    Pandas, and Dask to extract data for customer reports and visualize using
+                                    Matplotlib. DevOps experience using Fabric, Supervisor, and Terraform in the AWS
+                                    environment.</li>
+                                <li>Developed REST APIs for dishanywhere.com, the online portal of DISH.</li>
+                                <li>Worked with a large-scale Hadoop application for handling the dashboard of
+                                    day-to-day trends in dishanywhere.com.</li>
+                                <li>Built internal web application using Django, ReactJS, and Elasticsearch for data
+                                    curators.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Software Developer – Digital Innovation Group -->
+                    <div class="job-details">
+                        <div class="job-header">
+                            <div class="job-info">
+                                <span class="job-title">Software Developer</span>
+                                <span class="job-timeline">Sep 2013 – May 2015</span>
+                            </div>
+                            <div class="job-meta">
+                                <span class="company-name">Digital Innovation Group</span>
+                                <span class="job-location">Arizona State University, Tempe, USA</span>
+                            </div>
+                        </div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Contributed to NSF Funded open-source citation analysis project – ‘Tethne’ by
+                                    developing a Flask web application.</li>
+                                <li>Developed various citation networks such as bibliographic coupling, author-paper,
+                                    and co-author networks, various directed, undirected, and Multi graphs using
+                                    Networkx package.</li>
+                                <li>Used PyUnit for test-driven development and developed Google python-style compliant
+                                    code along with Pylint and agile software development using Pivotal tracker.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Software Development Intern – HiringSolved -->
+                    <div class="job-details">
+                        <div class="job-header">
+                            <div class="job-info">
+                                <span class="job-title">Software Development Intern</span>
+                                <span class="job-timeline">May 2014 – Aug 2014</span>
+                            </div>
+                            <div class="job-meta">
+                                <span class="company-name">HiringSolved</span>
+                                <span class="job-location">Arizona, USA</span>
+                            </div>
+                        </div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Developed a Job search engine using Flask web framework, HTML5/CSS/Twitter
+                                    Bootstrap, jQuery, PostgreSQL and deployed it in AWS EC2 instance where recruiters
+                                    can post jobs and search suitable candidates, and candidates can apply through
+                                    resume or LinkedIn (REST API).</li>
+                                <li>Deployed the web application with Nginx as web server/reverse proxy for handling
+                                    requests, Gunicorn as WSGI HTTP server, Fabric for application deployment, and
+                                    Supervisor for process control and monitoring the application.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Senior Software Developer – WIPRO Technologies -->
+                    <div class="job-details">
+                        <div class="job-header">
+                            <div class="job-info">
+                                <span class="job-title">Senior Software Developer</span>
+                                <span class="job-timeline">Feb 2010 – Jul 2013</span>
+                            </div>
+                            <div class="job-meta">
+                                <span class="company-name">WIPRO Technologies</span>
+                                <span class="job-location">Bangalore, India</span>
+                            </div>
+                        </div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Developed Python UI modules using Python ‘Snack’ library on top of RHEL for a custom
+                                    proprietary OS.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="divider"></div>
             </div>
-
             <div class="right-column">
                 <div class="content">
                     <div class="section-title">Education</div>
@@ -199,6 +317,7 @@
                     <p><strong>Bachelor’s in Computer Science & Engineering</strong> <br> SASTRA University – Thanjavur,
                         India <br> Conferred: May 2009</p>
                 </div>
+                <div class="divider"></div>
                 <div class="content">
                     <div class="section-title">Certifications</div>
                     <a href="https://www.credly.com/badges/6ee01952-67f4-4a1a-a348-1833b19fe827" target="_blank">
@@ -211,6 +330,7 @@
                         <p>AWS Certified Developer - Associate, 2023</p>
                     </a>
                 </div>
+                <div class="divider"></div>
                 <div class="content">
                     <div class="section-title">Skills</div>
                     <p><strong>Technical Skills</strong></p>
@@ -229,7 +349,7 @@
                             EC2/S3/EBS/RDS/IAM/SAM/Lambda, Serverless, Jenkins CI/CD, Slack Notifications.</li>
                         <li><strong>Open Source Contributions:</strong> Tethne, Ansible, Apache Airflow.</li>
                     </ul>
-
+                    <div class="divider"></div>
                     <p><strong>Management/Leadership Skills</strong></p>
                     <ul>
                         <li><strong>Team Development:</strong> Mentoring and training junior developers, PR and code
@@ -248,9 +368,7 @@
                             marketing team for
                             building ideas and design.</li>
                     </ul>
-                    <p>Communication: Open-minded, outgoing, and patient in conversations with others.</p>
-                    <p>Flexibility/Organizational skills: Managed to finish over 8 full-scale courses while working
-                        full-time to earn my GCP DevOps Engineer certification.</p>
+                    <div class="divider"></div>
                 </div>
             </div>
         </div>
