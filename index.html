@@ -2,470 +2,562 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f7f7f7;
-            color: #333;
-            font-size: 0.9em;
-        }
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Resume</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f7f7f7;
+			color: #333;
+			font-size: 0.9em;
+		}
 
-        .header {
-            background-color: #007bff;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
+		.header {
+			background-color: #007bff;
+			color: white;
+			padding: 15px;
+			text-align: center;
+		}
 
-        .header h1 {
-            font-size: 2em;
-            /* Reduced font size */
-            margin: 0;
-        }
+		.header h1 {
+			font-size: 2em;
+			margin: 0;
+		}
 
-        .header .contact-info {
-            margin-top: 5px;
-            font-size: 1em;
-            /* Reduced font size */
-        }
+		.header .contact-info {
+			margin-top: 5px;
+			font-size: 1em;
+		}
 
-        .summary-list {
-            display: flex;
-            flex-wrap: wrap;
-            padding: 0;
-            list-style: none;
-            margin: 0;
-        }
+		.header .contact-info span {
+			color: white;
+			/* Ensure the text is white */
+		}
 
-        .summary-list li {
-            flex: 1 1 23%;
-            /* Adjust width to fit 4 items per line */
-            margin: 5px 0;
-            /* Reduced margin to decrease line spacing */
-            box-sizing: border-box;
-            position: relative;
-            /* Required for positioning the custom bullet */
-            padding-left: 1.5em;
-            /* Space for the custom bullet */
-        }
+		.header .contact-info a {
+			color: #ffc107;
+			/* Change hyperlink color to a contrasting color */
+			text-decoration: none;
+			/* Remove underline for a cleaner look */
+		}
 
-        .summary-list li::before {
-            content: '•';
-            /* Custom bullet point */
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            /* Vertically center the bullet */
-            font-size: 1.2em;
-            /* Adjust bullet size */
-            color: black;
-            /* Customize bullet color */
-        }
+		.header .contact-info a:hover {
+			color: #ffeb3b;
+			/* Slightly lighter color on hover for emphasis */
+			text-decoration: underline;
+			/* Add underline on hover for better UX */
+		}
 
-        .summary-list li:nth-child(4n) {
-            margin-right: 0;
-            /* Remove margin on the right of the last item in each row */
-        }
+		.summary-list {
+			display: flex;
+			flex-wrap: wrap;
+			padding: 0;
+			list-style: none;
+			margin: 0;
+		}
 
-        @media (max-width: 600px) {
-            .summary-list li {
-                flex: 1 1 100%;
-                /* On smaller screens, each item takes full width */
-                margin: 5px 0;
-                /* Maintain reduced line spacing */
-            }
-        }
+		.summary-list li {
+			flex: 1 1 25%;
+			/* 4 items per line for wider screens */
+			margin: 5px 0;
+			box-sizing: border-box;
+			position: relative;
+			padding-left: 1.5em;
+		}
+
+		.summary-list li::before {
+			content: '•';
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			font-size: 1.2em;
+			color: black;
+		}
+
+		@media print {
+			.summary-list {
+				display: block;
+			}
+
+			.summary-list li {
+				display: inline-block;
+				width: 23%;
+				/* Approximately 4 items per line */
+				margin: 5px 1%;
+				padding-left: 1.5em;
+				/* box-sizing: border-box; */
+			}
+
+			.summary-list li:nth-child(4n) {
+				margin-right: 0;
+			}
+		}
+
+		@media (max-width: 600px) {
+			.summary-list li {
+				flex: 1 1 100%;
+				margin: 5px 0;
+			}
+		}
 
 
-        .container {
-            padding: 20px;
-        }
 
-        .section-title {
-            font-size: 1.3em;
-            /* Reduced font size */
-            margin-bottom: 10px;
-            color: #007bff;
-        }
+		.container {
+			padding: 20px;
+		}
 
-        .content {
-            font-size: 1em;
-            /* Adjusted font size */
-            margin-bottom: 20px;
-        }
+		.section-title {
+			font-size: 1.3em;
+			/* Reduced font size */
+			margin-bottom: 10px;
+			color: #007bff;
+		}
 
-        .two-column {
-            display: flex;
-            justify-content: space-between;
-        }
+		.content {
+			font-size: 1em;
+			/* Adjusted font size */
+			margin-bottom: 20px;
+		}
 
-        .left-column {
-            width: 65%;
-        }
+		.two-column {
+			display: flex;
+			justify-content: space-between;
+		}
 
-        .right-column {
-            width: 30%;
-        }
+		.left-column {
+			width: 65%;
+		}
 
-        .job-details {
-            display: flex;
-            flex-direction: column;
-        }
+		.right-column {
+			width: 30%;
+		}
 
-        .job-header {
-            display: flex;
-            flex-direction: column;
-        }
+		.job-details {
+			display: flex;
+			flex-direction: column;
+		}
 
-        .job-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+		.job-header {
+			display: flex;
+			flex-direction: column;
+		}
 
-        .job-title {
-            font-weight: bold;
-            margin-right: 2rem;
-        }
+		.job-info {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
 
-        .job-timeline {
-            font-weight: bold;
-            margin-left: 6rem;
-        }
+		.job-title {
+			font-weight: bold;
+			margin-right: 2rem;
+		}
 
-        .job-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+		.job-timeline {
+			font-weight: bold;
+			margin-left: 6rem;
+		}
 
-        .job-description {
-            list-style-type: none;
-            padding: 0;
-            text-align: justify;
-        }
+		.job-meta {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
 
-        .job-description li {
-            margin-bottom: 0.3rem;
-            /* Adjust as needed */
-            line-height: 1.4;
-            /* Adjust line height for tighter spacing */
-        }
+		.job-description {
+			list-style-type: none;
+			padding: 0;
+			text-align: justify;
+		}
 
-        .company-name,
-        .job-location {
-            font-style: italic;
-            color: #666;
-        }
+		.job-description li {
+			margin-bottom: 0.3rem;
+			/* Adjust as needed */
+			line-height: 1.4;
+			/* Adjust line height for tighter spacing */
+		}
 
-        .divider {
-            border-bottom: 2px solid #7fa3b7;
-            margin-top: 1rem;
-        }
+		.company-name,
+		.job-location {
+			font-style: italic;
+			color: #666;
+		}
 
-        @media (min-width: 768px) {
-            .two-column {
-                flex-direction: row;
-                justify-content: space-between;
-            }
+		.divider {
+			border-bottom: 2px solid #7fa3b7;
+			margin-top: 1rem;
+		}
 
-            .left-column {
-                width: 65%;
-            }
+		@media (min-width: 768px) {
+			.two-column {
+				flex-direction: row;
+				justify-content: space-between;
+			}
 
-            .right-column {
-                width: 30%;
-            }
+			.left-column {
+				width: 65%;
+			}
 
-            .job-info {
-                flex-direction: row;
-                justify-content: space-between;
-            }
+			.right-column {
+				width: 30%;
+			}
 
-            .management-skills p {
-                margin-bottom: 0.3rem;
-                /* Adjust space between paragraphs */
-                line-height: 1.4;
-                /* Adjust line height for readability */
-                text-align: justify;
-            }
+			.job-info {
+				flex-direction: row;
+				justify-content: space-between;
+			}
 
-            .management-skills strong {
-                display: block;
-                /* Ensure heading is on its own line */
-                margin-bottom: 0.2rem;
-                /* Space between heading and paragraph text */
-            }
-    </style>
+			.management-skills p {
+				margin-bottom: 0.3rem;
+				/* Adjust space between paragraphs */
+				line-height: 1.4;
+				/* Adjust line height for readability */
+				text-align: justify;
+			}
+
+			.management-skills strong {
+				display: block;
+				/* Ensure heading is on its own line */
+				margin-bottom: 0.2rem;
+				/* Space between heading and paragraph text */
+			}
+		}
+	</style>
 </head>
 
 <body>
+	<div class="header">
+		<h1>Ramki Subramanian</h1>
+		<div class="contact-info">
+			<span>3x AWS Certified Senior FullStack Engineer |
+				<span>Email: ramkisastra@hotmail.com |
+					<span><a href="https://www.linkedin.com/in/subramanianramki" target="_blank"
+							rel="noopener noreferrer">LinkedIn</a> |
+						<span><a href="https://github.com/rsubra13" target="_blank" rel="noopener noreferrer">GitHub</a>
+		</div>
 
+	</div>
 
-    <div class="header">
-        <h1>Ramki Subramanian</h1>
-        <div class="contact-info">
-            <span>3x AWS Certified Senior FullStack Engineer</span> |
-            <span>Email: ramkisastra@hotmail.com</span>
-        </div>
-    </div>
+	<div class="container">
+		<div class="two-column">
+			<div class="left-column">
+				<div class="content">
+					<div class="section-title">Summary</div>
+					<p>
+						Senior Full Stack Engineer with 14+ years of professional
+						experience focusing on Software Development specializing in:
+					</p>
+					<ul class="summary-list">
+						<li>Scalable REST APIs</li>
+						<li>Serverless DevOps</li>
+						<li>Python, ReactJS</li>
+						<li>Data Engineering</li>
+						<li>Optimized Workflows</li>
+						<li>Cloud Architecture</li>
+						<li>CI/CD Pipelines</li>
+						<li>Team Leadership</li>
+					</ul>
+				</div>
+				<div class="divider"></div>
+				<div class="content">
+					<div class="section-title">Professional Experience</div>
 
+					<!-- Senior Full Stack Engineer / Senior Site Reliability Engineer -->
+					<div class="job-details">
+						<div class="job-header">
+							<div class="job-info">
+								<span class="job-title">Senior Full Stack Engineer / Senior Site Reliability
+									Engineer</span>
+								<span class="job-timeline">March 2022 – Current</span>
+							</div>
+							<div class="job-meta">
+								<span class="company-name">Certn</span>
+								<span class="job-location">Vancouver, Canada</span>
+							</div>
+						</div>
+						<div class="job-description">
+							<ul>
+								<li>
+									Architected and developed scalable backend solutions using
+									Django Rest Framework and ReactJS, ensuring high performance
+									and extensive test coverage with pytest.
+								</li>
+								<li>
+									Enhanced legacy systems through SRE practices, performing
+									API performance testing, writing Terraform scripts for
+									infrastructure management, and optimizing metrics with AWS
+									monitoring, New Relic, OpenSearch, and Sentry.
+								</li>
+								<li>
+									Managed full project lifecycle, gathering requirements,
+									defining technical specifications, and collaborating with
+									stakeholders to ensure timely and high-quality feature
+									delivery.
+								</li>
+							</ul>
+						</div>
+					</div>
 
-    <div class="container">
-        <div class="two-column">
-            <div class="left-column">
-                <div class="content">
-                    <div class="section-title">Summary</div>
-                    <p>Senior Full Stack Engineer with 14+ years of professional experience focusing on Software
-                        Development specializing in:</p>
-                    <ul class="summary-list">
-                        <li>Scalable REST APIs</li>
-                        <li>Serverless DevOps</li>
-                        <li>Python, ReactJS</li>
-                        <li>Data Engineering</li>
-                        <li>Optimized Workflows</li>
-                        <li>Cloud Architecture</li>
-                        <li>CI/CD Pipelines</li>
-                        <li>Team Leadership</li>
-                    </ul>
-                </div>
-                <div class="divider"></div>
-                <div class="content">
-                    <div class="section-title">Professional Experience</div>
+					<!-- Senior Full Stack Engineer – Attendease -->
+					<div class="job-details">
+						<div class="job-header">
+							<div class="job-info">
+								<span class="job-title">Senior Full Stack Engineer</span>
+								<span class="job-timeline">June 2019 – Current</span>
+							</div>
+							<div class="job-meta">
+								<span class="company-name">Attendease</span>
+								<span class="job-location">Vancouver, Canada</span>
+							</div>
+						</div>
+						<div class="job-description">
+							<ul>
+								<li>
+									Ruby on Rails / React JS Full stack development with focus
+									on Microservices/Serverless workflows in Python.
+								</li>
+								<li>
+									Optimization of legacy APIs, PostgreSQL DB tuning,
+									Application performance tuning, Analytics module design and
+									development from scratch.
+								</li>
+								<li>
+									Virtual events requirement analysis, vendor PoC,
+									architecture design, implementation with ReactJS, AWS
+									Lambda/Serverless pipelines.
+								</li>
+								<li>
+									Multi-environment platform infrastructure development and
+									maintenance using Terraform.
+								</li>
+							</ul>
+						</div>
+					</div>
 
-                    <!-- Senior Full Stack Engineer / Senior Site Reliability Engineer -->
-                    <div class="job-details">
-                        <div class="job-header">
-                            <div class="job-info">
-                                <span class="job-title">Senior Full Stack Engineer / Senior Site Reliability
-                                    Engineer</span>
-                                <span class="job-timeline">March 2022 – Current</span>
-                            </div>
-                            <div class="job-meta">
-                                <span class="company-name">Certn</span>
-                                <span class="job-location">Vancouver, Canada</span>
-                            </div>
-                        </div>
-                        <div class="job-description">
-                            <ul>
-                                <li>Designed and developed high-performance Django Rest Framework APIs with extensive
-                                    test coverage using pytest.</li>
-                                <li>Led the successful integration of ReactJS front-end with Django back-end across
-                                    multiple projects.</li>
-                                <li>Performed SRE duties to enhance site performance for legacy systems while
-                                    integrating new technologies.</li>
-                                <li>Conducted legacy API performance testing, wrote Terraform scripts for infrastructure
-                                    management, and utilized AWS monitoring, New Relic, OpenSearch, and Sentry for
-                                    metrics and performance optimization.</li>
-                                <li>Managed complete project lifecycle, including gathering requirements, communicating
-                                    with stakeholders, and defining technical specifications.</li>
-                                <li>Architected and implemented backend solutions with Django and ReactJS, focusing on
-                                    high performance and scalability.</li>
-                                <li>Defined technical details and acceptance criteria for development stories, ensuring
-                                    timely and high-quality feature completion through effective cross-functional
-                                    collaboration.</li>
-                            </ul>
-                        </div>
-                    </div>
+					<!-- Senior Software Engineer – DISH Network -->
+					<div class="job-details">
+						<div class="job-header">
+							<div class="job-info">
+								<span class="job-title">Senior Software Engineer</span>
+								<span class="job-timeline">June 2015 – May 2019</span>
+							</div>
+							<div class="job-meta">
+								<span class="company-name">DISH Network</span>
+								<span class="job-location">Colorado, USA</span>
+							</div>
+						</div>
+						<div class="job-description">
+							<ul>
+								<li>
+									Design, build, create, and maintain Python ETL real-time and
+									batch processing data pipelines using Apache Airflow, Kafka,
+									Elasticsearch, MySQL, MongoDB, Apache Hive, Impala.
+								</li>
+								<li>
+									Experienced in Hadoop Map-R cluster and wrote complex
+									queries using Hive, Impala, Pandas, and Dask to extract data
+									for customer reports and visualize using Matplotlib. DevOps
+									experience using Fabric, Supervisor, and Terraform in the
+									AWS environment.
+								</li>
+								<li>
+									Developed REST APIs for dishanywhere.com, the online portal
+									of DISH.
+								</li>
+								<li>
+									Worked with a large-scale Hadoop application for handling
+									the dashboard of day-to-day trends in dishanywhere.com.
+								</li>
+								<li>
+									Built internal web application using Django, ReactJS, and
+									Elasticsearch for data curators.
+								</li>
+							</ul>
+						</div>
+					</div>
 
-                    <!-- Senior Full Stack Engineer – Attendease -->
-                    <div class="job-details">
-                        <div class="job-header">
-                            <div class="job-info">
-                                <span class="job-title">Senior Full Stack Engineer</span>
-                                <span class="job-timeline">June 2019 – Current</span>
-                            </div>
-                            <div class="job-meta">
-                                <span class="company-name">Attendease</span>
-                                <span class="job-location">Vancouver, Canada</span>
-                            </div>
-                        </div>
-                        <div class="job-description">
-                            <ul>
-                                <li>Ruby on Rails / React JS Full stack development with focus on
-                                    Microservices/Serverless workflows in Python.</li>
-                                <li>Optimization of legacy APIs, PostgreSQL DB tuning, Application performance tuning,
-                                    Analytics module design and development from scratch.</li>
-                                <li>Virtual events requirement analysis, vendor PoC, architecture design, implementation
-                                    with ReactJS, AWS Lambda/Serverless pipelines.</li>
-                                <li>Multi-environment platform infrastructure development and maintenance using
-                                    Terraform.</li>
-                            </ul>
-                        </div>
-                    </div>
+					<!-- Software Developer – Digital Innovation Group -->
+					<div class="job-details">
+						<div class="job-header">
+							<div class="job-info">
+								<span class="job-title">Software Developer</span>
+								<span class="job-timeline">Sep 2013 – May 2015</span>
+							</div>
+							<div class="job-meta">
+								<span class="company-name">Digital Innovation Group</span>
+								<span class="job-location">Arizona State University, Tempe, USA</span>
+							</div>
+						</div>
+						<div class="job-description">
+							<ul>
+								<li>
+									Contributed to NSF Funded open-source citation analysis
+									project – ‘Tethne’ by developing a Flask web application.
+								</li>
+								<li>
+									Developed various citation networks such as bibliographic
+									coupling, author-paper, and co-author networks, various
+									directed, undirected, and Multi graphs using Networkx
+									package.
+								</li>
+							</ul>
+						</div>
+					</div>
 
-                    <!-- Senior Software Engineer – DISH Network -->
-                    <div class="job-details">
-                        <div class="job-header">
-                            <div class="job-info">
-                                <span class="job-title">Senior Software Engineer</span>
-                                <span class="job-timeline">June 2015 – May 2019</span>
-                            </div>
-                            <div class="job-meta">
-                                <span class="company-name">DISH Network</span>
-                                <span class="job-location">Colorado, USA</span>
-                            </div>
-                        </div>
-                        <div class="job-description">
-                            <ul>
-                                <li>Design, build, create, and maintain Python ETL real-time and batch processing data
-                                    pipelines using Apache Airflow, Kafka, Elasticsearch, MySQL, MongoDB, Apache Hive,
-                                    Impala.</li>
-                                <li>Experienced in Hadoop Map-R cluster and wrote complex queries using Hive, Impala,
-                                    Pandas, and Dask to extract data for customer reports and visualize using
-                                    Matplotlib. DevOps experience using Fabric, Supervisor, and Terraform in the AWS
-                                    environment.</li>
-                                <li>Developed REST APIs for dishanywhere.com, the online portal of DISH.</li>
-                                <li>Worked with a large-scale Hadoop application for handling the dashboard of
-                                    day-to-day trends in dishanywhere.com.</li>
-                                <li>Built internal web application using Django, ReactJS, and Elasticsearch for data
-                                    curators.</li>
-                            </ul>
-                        </div>
-                    </div>
+					<!-- Software Development Intern – HiringSolved -->
+					<div class="job-details">
+						<div class="job-header">
+							<div class="job-info">
+								<span class="job-title">Software Development Intern</span>
+								<span class="job-timeline">May 2014 – Aug 2014</span>
+							</div>
+							<div class="job-meta">
+								<span class="company-name">HiringSolved</span>
+								<span class="job-location">Arizona, USA</span>
+							</div>
+						</div>
+						<div class="job-description">
+							<ul>
+								<li>
+									Developed a Job search engine using Flask web framework,
+									HTML5/CSS/Twitter Bootstrap, jQuery, PostgreSQL and deployed
+									it in AWS EC2 instance where recruiters can post jobs and
+									search suitable candidates, and candidates can apply through
+									resume or LinkedIn (REST API).
+								</li>
+								<li>
+									Deployed the web application with Nginx as web
+									server/reverse proxy for handling requests, Gunicorn as WSGI
+									HTTP server, Fabric for application deployment, and
+									Supervisor for process control and monitoring the
+									application.
+								</li>
+							</ul>
+						</div>
+					</div>
 
-                    <!-- Software Developer – Digital Innovation Group -->
-                    <div class="job-details">
-                        <div class="job-header">
-                            <div class="job-info">
-                                <span class="job-title">Software Developer</span>
-                                <span class="job-timeline">Sep 2013 – May 2015</span>
-                            </div>
-                            <div class="job-meta">
-                                <span class="company-name">Digital Innovation Group</span>
-                                <span class="job-location">Arizona State University, Tempe, USA</span>
-                            </div>
-                        </div>
-                        <div class="job-description">
-                            <ul>
-                                <li>Contributed to NSF Funded open-source citation analysis project – ‘Tethne’ by
-                                    developing a Flask web application.</li>
-                                <li>Developed various citation networks such as bibliographic coupling, author-paper,
-                                    and co-author networks, various directed, undirected, and Multi graphs using
-                                    Networkx package.</li>
-                                <li>Used PyUnit for test-driven development and developed Google python-style compliant
-                                    code along with Pylint and agile software development using Pivotal tracker.</li>
-                            </ul>
-                        </div>
-                    </div>
+					<!-- Senior Software Developer – WIPRO Technologies -->
+					<div class="job-details">
+						<div class="job-header">
+							<div class="job-info">
+								<span class="job-title">Senior Software Developer</span>
+								<span class="job-timeline">Feb 2010 – Jul 2013</span>
+							</div>
+							<div class="job-meta">
+								<span class="company-name">WIPRO Technologies</span>
+								<span class="job-location">Bangalore, India</span>
+							</div>
+						</div>
+						<div class="job-description">
+							<ul>
+								<li>
+									Developed Python UI modules using Python ‘Snack’ library on
+									top of RHEL for a custom proprietary OS.
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="divider"></div>
+			</div>
+			<div class="right-column">
+				<div class="content">
+					<div class="section-title">Education</div>
+					<p>
+						<strong>Master of Computer Science (2015)</strong> <br />
+						Arizona State University – Tempe, AZ
+					</p>
+					<p>
+						<strong>Bachelor’s in Computer Science & Engineering (2009)</strong>
+						<br />
+						SASTRA University – Thanjavur, India
+					</p>
+				</div>
+				<div class="divider"></div>
+				<div class="content">
+					<div class="section-title">Certifications</div>
+					<a href="https://www.credly.com/badges/6ee01952-67f4-4a1a-a348-1833b19fe827" target="_blank">
+						<p>AWS Certified DevOps Engineer – Professional, 2024</p>
+					</a>
+					<a href="https://www.credly.com/badges/67b74128-9e24-4a48-b2fa-784128b10c7d" target="_blank">
+						<p>AWS Certified Solutions Architect – Professional, 2024</p>
+					</a>
+					<a href="https://www.credly.com/badges/0ec2b593-18f0-47ed-92a2-0a2484bbfb28" target="_blank">
+						<p>AWS Certified Developer - Associate, 2023</p>
+					</a>
+				</div>
+				<div class="divider"></div>
+				<div class="content">
+					<div class="section-title">Skills</div>
+					<div class="management-skills">
+						<h6><strong>Technical Skills</strong></h6>
+						<p>
+							<strong>Programming Languages/Web Technologies:</strong>
+							Ruby/Rails, Python, Django, Flask, Bash scripting, HTML5/CSS,
+							JavaScript, ReactJS, Bootstrap, Agile methodologies, Git.
+						</p>
+						<p>
+							<strong>Databases/Datastores:</strong> MySQL, SQLite,
+							PostgreSQL, MongoDB (Certified Developer), Elasticsearch, Redis,
+							DynamoDB.
+						</p>
+						<p>
+							<strong>Hadoop & ETL Technologies:</strong> Hive, Impala, HBase,
+							Apache Airflow, Elasticsearch, Apache Kafka, Celery, RabbitMQ.
+						</p>
+						<p>
+							<strong>Data Wrangling:</strong> Dask, Pandas, NumPy,
+							JupyterLab.
+						</p>
+						<p>
+							<strong>DevOps:</strong> Terraform, Docker, Vagrant, Supervisor,
+							Fabric, AWS EC2/S3/EBS/RDS/IAM/SAM/Lambda, Serverless, Jenkins
+							CI/CD, Slack Notifications.
+						</p>
+						<p>
+							<strong>Open Source Contributions:</strong> Tethne, Ansible,
+							Apache Airflow.
+						</p>
+					</div>
+					<div class="divider"></div>
+					<div class="management-skills">
+						<h6><strong>Management/Leadership Skills</strong></h6>
+						<p>
+							<strong>Team Development:</strong> Mentoring and training junior
+							developers, PR and code reviews, weekly assessment sessions.
+						</p>
+						<p>
+							<strong>Project Management:</strong> Helping Product Owner in
+							sprint planning and tasks assignment for team members.
+						</p>
+						<p>
+							<strong>Project Design:</strong> Designed and spearheaded
+							architecture of many data pipeline projects and Virtual Events.
+						</p>
+						<p>
+							<strong>Internal Stakeholder Interactions:</strong> Technical
+							presentations and POC with Business Managers and Directors for
+							high-scale projects.
+						</p>
+						<p>
+							<strong>External Stakeholder Interactions:</strong> Interaction
+							with product team and marketing team for building ideas and
+							design.
+						</p>
+					</div>
 
-                    <!-- Software Development Intern – HiringSolved -->
-                    <div class="job-details">
-                        <div class="job-header">
-                            <div class="job-info">
-                                <span class="job-title">Software Development Intern</span>
-                                <span class="job-timeline">May 2014 – Aug 2014</span>
-                            </div>
-                            <div class="job-meta">
-                                <span class="company-name">HiringSolved</span>
-                                <span class="job-location">Arizona, USA</span>
-                            </div>
-                        </div>
-                        <div class="job-description">
-                            <ul>
-                                <li>Developed a Job search engine using Flask web framework, HTML5/CSS/Twitter
-                                    Bootstrap, jQuery, PostgreSQL and deployed it in AWS EC2 instance where recruiters
-                                    can post jobs and search suitable candidates, and candidates can apply through
-                                    resume or LinkedIn (REST API).</li>
-                                <li>Deployed the web application with Nginx as web server/reverse proxy for handling
-                                    requests, Gunicorn as WSGI HTTP server, Fabric for application deployment, and
-                                    Supervisor for process control and monitoring the application.</li>
-                            </ul>
-                        </div>
-                    </div>
+					<div class="divider"></div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-                    <!-- Senior Software Developer – WIPRO Technologies -->
-                    <div class="job-details">
-                        <div class="job-header">
-                            <div class="job-info">
-                                <span class="job-title">Senior Software Developer</span>
-                                <span class="job-timeline">Feb 2010 – Jul 2013</span>
-                            </div>
-                            <div class="job-meta">
-                                <span class="company-name">WIPRO Technologies</span>
-                                <span class="job-location">Bangalore, India</span>
-                            </div>
-                        </div>
-                        <div class="job-description">
-                            <ul>
-                                <li>Developed Python UI modules using Python ‘Snack’ library on top of RHEL for a custom
-                                    proprietary OS.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="divider"></div>
-            </div>
-            <div class="right-column">
-                <div class="content">
-                    <div class="section-title">Education</div>
-                    <p><strong>Master of Computer Science (2015)</strong> <br> Arizona State University – Tempe, AZ
-                    </p>
-                    <p><strong>Bachelor’s in Computer Science & Engineering (2009)</strong> <br> SASTRA University –
-                        Thanjavur,
-                        India</p>
-                </div>
-                <div class="divider"></div>
-                <div class="content">
-                    <div class="section-title">Certifications</div>
-                    <a href="https://www.credly.com/badges/6ee01952-67f4-4a1a-a348-1833b19fe827" target="_blank">
-                        <p>AWS Certified DevOps Engineer – Professional, 2024</p>
-                    </a>
-                    <a href="https://www.credly.com/badges/67b74128-9e24-4a48-b2fa-784128b10c7d" target="_blank">
-                        <p>AWS Certified Solutions Architect – Professional, 2024</p>
-                    </a>
-                    <a href="https://www.credly.com/badges/0ec2b593-18f0-47ed-92a2-0a2484bbfb28" target="_blank">
-                        <p>AWS Certified Developer - Associate, 2023</p>
-                    </a>
-                </div>
-                <div class="divider"></div>
-                <div class="content">
-                    <div class="section-title">Skills</div>
-                    <div class="management-skills">
-                        <h6><strong>Technical Skills</strong></h6>
-                        <p><strong>Programming Languages/Web Technologies:</strong> Ruby/Rails, Python, Django, Flask,
-                            Bash
-                            scripting, HTML5/CSS, JavaScript, ReactJS, Bootstrap, Agile methodologies, Git.</p>
-                        <p><strong>Databases/Datastores:</strong> MySQL, SQLite, PostgreSQL, MongoDB (Certified
-                            Developer),
-                            Elasticsearch, Redis, DynamoDB.</p>
-                        <p><strong>Hadoop & ETL Technologies:</strong> Hive, Impala, HBase, Apache Airflow,
-                            Elasticsearch, Apache
-                            Kafka, Celery, RabbitMQ.</p>
-                        <p><strong>Data Wrangling:</strong> Dask, Pandas, NumPy, JupyterLab.</p>
-                        <p><strong>DevOps:</strong> Terraform, Docker, Vagrant, Supervisor, Fabric, AWS
-                            EC2/S3/EBS/RDS/IAM/SAM/Lambda, Serverless, Jenkins CI/CD, Slack Notifications.</p>
-                        <p><strong>Open Source Contributions:</strong> Tethne, Ansible, Apache Airflow.</p>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="management-skills">
-                        <h6><strong>Management/Leadership Skills</strong></h6>
-                        <p><strong>Team Development:</strong> Mentoring and training junior developers, PR and code
-                            reviews, weekly assessment sessions.</p>
-                        <p><strong>Project Management:</strong> Helping Product Owner in sprint planning and tasks
-                            assignment for team members.</p>
-                        <p><strong>Project Design:</strong> Designed and spearheaded architecture of many data pipeline
-                            projects and Virtual Events.</p>
-                        <p><strong>Internal Stakeholder Interactions:</strong> Technical presentations and POC with
-                            Business Managers and Directors for high-scale projects.</p>
-                        <p><strong>External Stakeholder Interactions:</strong> Interaction with product team and
-                            marketing team for building ideas and design.</p>
-                    </div>
-
-                    <div class="divider"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
