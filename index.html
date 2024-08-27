@@ -137,6 +137,30 @@
 			width: 30%;
 		}
 
+		.certification-row {
+			display: table;
+			width: 100%;
+			/* Make the row full-width */
+			margin-bottom: 0.5rem;
+			/* Add some space between rows */
+		}
+
+		.certification-row a {
+			display: table-cell;
+			padding: 0.5rem;
+			/* Add some padding for spacing */
+			text-decoration: none;
+			/* Remove underline from links */
+			color: #007bff;
+			/* Set the color of the links */
+		}
+
+		.certification-row a:hover {
+			text-decoration: underline;
+			/* Underline on hover for emphasis */
+		}
+
+
 		.job-details {
 			display: flex;
 			flex-direction: column;
@@ -483,15 +507,24 @@
 				<div class="divider"></div>
 				<div class="content">
 					<div class="section-title">Certifications</div>
-					<a href="https://www.credly.com/badges/6ee01952-67f4-4a1a-a348-1833b19fe827" target="_blank">
-						<p>AWS Certified DevOps Engineer – Professional, 2024</p>
-					</a>
-					<a href="https://www.credly.com/badges/67b74128-9e24-4a48-b2fa-784128b10c7d" target="_blank">
-						<p>AWS Certified Solutions Architect – Professional, 2024</p>
-					</a>
-					<a href="https://www.credly.com/badges/0ec2b593-18f0-47ed-92a2-0a2484bbfb28" target="_blank">
-						<p>AWS Certified Developer - Associate, 2023</p>
-					</a>
+					<div class="certification-row">
+						<a href="https://www.credly.com/badges/6ee01952-67f4-4a1a-a348-1833b19fe827" target="_blank"
+							rel="noopener noreferrer">
+							<span>AWS Certified DevOps Engineer – Professional, 2024</span>
+						</a>
+					</div>
+					<div class="certification-row">
+						<a href="https://www.credly.com/badges/67b74128-9e24-4a48-b2fa-784128b10c7d" target="_blank"
+							rel="noopener noreferrer">
+							<span>AWS Certified Solutions Architect – Professional, 2024</span>
+						</a>
+					</div>
+					<div class="certification-row">
+						<a href="https://www.credly.com/badges/0ec2b593-18f0-47ed-92a2-0a2484bbfb28" target="_blank"
+							rel="noopener noreferrer">
+							<span>AWS Certified Developer - Associate, 2023</span>
+						</a>
+					</div>
 				</div>
 				<div class="divider"></div>
 				<div class="content">
@@ -530,7 +563,7 @@
 						<h6><strong>Management/Leadership Skills</strong></h6>
 						<p>
 							<strong>Team Development:</strong> Mentoring and training junior
-							developers, PR and code reviews, weekly assessment sessions.
+							colleagues and interns, PR and code reviews, PD sessions.
 						</p>
 						<p>
 							<strong>Project Management:</strong> Helping Product Owner in
@@ -538,7 +571,7 @@
 						</p>
 						<p>
 							<strong>Project Design:</strong> Designed and spearheaded
-							architecture of many data pipeline projects and Virtual Events.
+							architecture of many data pipeline projects and other high-scale projects.
 						</p>
 						<p>
 							<strong>Internal Stakeholder Interactions:</strong> Technical
@@ -546,9 +579,8 @@
 							high-scale projects.
 						</p>
 						<p>
-							<strong>External Stakeholder Interactions:</strong> Interaction
-							with product team and marketing team for building ideas and
-							design.
+							<strong>External Interactions:</strong> Interaction
+							with vendors and clients for API integrations.
 						</p>
 					</div>
 
