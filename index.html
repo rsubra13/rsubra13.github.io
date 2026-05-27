@@ -15,6 +15,7 @@
 			background-color: #f7f7f7;
 			color: #333;
 			font-size: 0.9em;
+			line-height: 1.22;
 		}
 
 		.header {
@@ -54,7 +55,7 @@
 		.summary-list {
 			display: grid;
 			grid-template-columns: repeat(4, minmax(0, 1fr));
-			column-gap: 1.5rem;
+			column-gap: 1rem;
 			row-gap: 0.45rem;
 			padding: 0;
 			list-style: none;
@@ -67,14 +68,14 @@
 			position: relative;
 			padding-left: 1.1em;
 			line-height: 1.3;
+			white-space: nowrap;
 		}
 
 		.summary-list li::before {
 			content: '\2022';
 			position: absolute;
 			left: 0;
-			top: 50%;
-			transform: translateY(-50%);
+			top: 0;
 			font-size: 1.2em;
 			color: black;
 		}
@@ -100,11 +101,11 @@
 		}
 
 		.left-column {
-			width: 65%;
+			width: 62%;
 		}
 
 		.right-column {
-			width: 30%;
+			width: 34%;
 		}
 
 		.certification-row {
@@ -130,6 +131,7 @@
 		.job-details {
 			display: flex;
 			flex-direction: column;
+			margin-bottom: 1.08rem;
 		}
 
 		.job-header {
@@ -157,17 +159,18 @@
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
+			margin-bottom: 0.22rem;
 		}
 
 		.job-description {
 			list-style-type: none;
 			padding: 0;
-			text-align: justify;
+			text-align: left;
 		}
 
 		.job-description li {
-			margin-bottom: 0.3rem;
-			line-height: 1.4;
+			margin-bottom: 0.46rem;
+			line-height: 1.5;
 		}
 
 		.company-name,
@@ -180,6 +183,20 @@
 			border-bottom: 2px solid #7fa3b7;
 			margin-top: 1rem;
 			margin-bottom: 1rem;
+		}
+
+		.skill-groups {
+			display: grid;
+			gap: 0.75rem;
+		}
+
+		.skill-group {
+			line-height: 1.42;
+		}
+
+		.skill-group strong {
+			display: block;
+			margin-bottom: 0.14rem;
 		}
 
 		@media (max-width: 900px) {
@@ -205,24 +222,29 @@
 
 		@media print {
 			body {
-				font-size: 0.74em;
+				font-size: 0.78em;
 				background: white;
 				-webkit-print-color-adjust: exact;
 				print-color-adjust: exact;
 			}
 			.container {
-				padding: 8px 12px;
+				padding: 10px 14px;
 			}
-			.content { margin-bottom: 10px; }
-			.divider { margin: 6px 0; }
-			.summary-list li { margin: 2px 0; }
-			.job-description li { margin-bottom: 1px; line-height: 1.22; }
-			.left-column { width: 67%; }
-			.right-column { width: 28%; }
+			.content { margin-bottom: 12px; }
+			.divider { margin: 8px 0; }
+			.summary-list { column-gap: 0.75rem; row-gap: 0.38rem; }
+			.summary-list li { margin: 1px 0; font-size: 0.94em; }
+			.job-details { margin-bottom: 0.92rem; }
+			.job-meta { margin-bottom: 0.28rem; }
+			.job-description li { margin-bottom: 3px; line-height: 1.36; }
+			.skill-groups { gap: 0.58rem; }
+			.skill-group { line-height: 1.36; }
+			.left-column { width: 64%; }
+			.right-column { width: 32%; }
 			.job-title { margin-right: 1rem; }
 			.job-timeline { margin-left: 2rem; }
 			h6 { margin: 0.35rem 0; }
-			p { margin-bottom: 0.35rem; }
+			p { margin-bottom: 0.45rem; }
 		}
 
 	</style>
@@ -246,14 +268,14 @@
 					<div class="section-title">Summary</div>
 					<p>Senior Software Engineer with 15+ years across full-stack product engineering, SRE/platform reliability, cloud architecture, data systems, and applied AI. Strong record building production APIs, cloud-native workflows, developer tooling, and AI-enabled engineering practices.</p>
 					<ul class="summary-list">
-						<li>Full-stack delivery</li>
-						<li>SRE / observability</li>
-						<li>AI-assisted engineering</li>
-						<li>OpenAI / Bedrock</li>
-						<li>Cloud architecture</li>
-						<li>Data and async systems</li>
-						<li>Technical leadership</li>
-						<li>Platform and IaC</li>
+						<li>Full-stack Delivery</li>
+						<li>SRE/Observability</li>
+						<li>AI-assisted Dev</li>
+						<li>OpenAI/Bedrock</li>
+						<li>Cloud Architecture</li>
+						<li>Data Systems</li>
+						<li>Tech Leadership</li>
+						<li>Platform/IaC</li>
 					</ul>
 				</div>
 				<div class="divider"></div>
@@ -273,7 +295,7 @@
 						</div>
 						<div class="job-description">
 							<ul>
-								<li>Architected and shipped full-stack product features using Django and React/TypeScript, owning API design, workflow orchestration, UI integration, tests, and production rollout.</li><li>Built AI-assisted operational tooling with OpenAI integrations, structured summaries, caching, asynchronous processing, validation, and production-readiness controls.</li><li>Led third-party integration work for background-check fulfillment workflows, including credential handling, webhook processing, mock services, error handling, and cross-environment configuration.</li><li>Improved platform reliability and performance through production investigations, PostgreSQL slow-query analysis, observability triage, query optimization, and operational runbooks for high-traffic workflows.</li><li>Extended public APIs and developer experience by shipping verification endpoints, schema alignment, integration tests, API documentation, CI/CD workflows, and interactive API reference capabilities.</li><li>Contributed to cloud delivery across Kubernetes, Helm, ArgoCD, AWS, Terraform, and secret-management workflows, supporting multi-region configuration, service integration, billing/auth flows, and privacy-conscious platform changes.</li>
+								<li>Shipped full-stack features across Django services and React/TypeScript applications, covering API design, workflow orchestration, UI integration, tests, and rollout.</li><li>Built AI-assisted operational tooling with OpenAI integrations, structured summaries, caching, async jobs, validation, and production safeguards.</li><li>Delivered third-party fulfillment integrations and public API enhancements, including credential handling, webhooks, mocks, schema alignment, docs, and integration tests.</li><li>Improved reliability and performance through production investigations, PostgreSQL slow-query analysis, observability triage, query optimization, and runbooks.</li><li>Contributed to cloud delivery across Kubernetes, Helm, ArgoCD, AWS, Terraform, and secrets workflows for multi-region configuration and service integration.</li>
 							</ul>
 						</div>
 					</div>
@@ -395,23 +417,53 @@
 				<div class="divider"></div>
 				<div class="content">
 					<div class="section-title">Skills</div>
-					<div class="management-skills">
-						<h6><strong>Technical Skills</strong></h6>
-						<p><strong>Backend/Full Stack:</strong> Python, Django, DRF, Flask, Ruby on Rails, JavaScript/TypeScript, ReactJS, NextJS, REST APIs, HTML5/CSS, Bootstrap</p>
-						<p><strong>AI/LLM Engineering:</strong> OpenAI API, AWS Bedrock, prompt/workflow design, AI-assisted development, Cursor, MCP servers, agent skills, validation and test-driven AI integration</p>
-						<p><strong>Cloud/Platform:</strong> AWS, GCP personal projects, Kubernetes, Helm, ArgoCD, Terraform, Docker, AWS EC2/S3/EBS/RDS/IAM/SAM/Lambda, CI/CD, GitHub Actions, Jenkins</p>
-						<p><strong>SRE/Observability:</strong> Production reliability, incident response, API performance testing, New Relic, Sentry, OpenSearch/Elasticsearch, Prometheus, Grafana</p>
-						<p><strong>Databases/Data Systems:</strong> PostgreSQL, MySQL, SQLite, MongoDB, Redis, DynamoDB, Airflow, Kafka, Celery, RabbitMQ, Hive, Impala, Pandas, Dask, NumPy</p>
-						<p><strong>Open Source Contributions:</strong> Tethne, Ansible, Apache Airflow</p>
+					<div class="skill-groups">
+						<div class="skill-group">
+							<strong>Backend</strong>
+							Python, Django, DRF, Flask, Ruby on Rails, REST APIs
+						</div>
+						<div class="skill-group">
+							<strong>Frontend</strong>
+							React, TypeScript, NextJS, HTML/CSS, Bootstrap
+						</div>
+						<div class="skill-group">
+							<strong>AI / LLM</strong>
+							OpenAI API, AWS Bedrock, Cursor, MCP servers, agent workflows
+						</div>
+						<div class="skill-group">
+							<strong>Cloud / DevOps</strong>
+							AWS, GCP, Kubernetes, Helm, ArgoCD, Terraform, Docker, GitHub Actions
+						</div>
+						<div class="skill-group">
+							<strong>SRE / Observability</strong>
+							New Relic, Sentry, OpenSearch, Prometheus, Grafana, API performance testing
+						</div>
+						<div class="skill-group">
+							<strong>Data Systems</strong>
+							PostgreSQL, MySQL, Redis, DynamoDB, MongoDB, Airflow, Kafka, Celery, Pandas
+						</div>
+						<div class="skill-group">
+							<strong>Open Source</strong>
+							Apache Airflow, Ansible, Tethne
+						</div>
 					</div>
-					<div class="divider"></div>
-					<div class="management-skills">
-						<h6><strong>Management/Leadership Skills</strong></h6>
-						<p><strong>Team Development:</strong> Mentoring and training junior colleagues and interns, PR and code reviews, technical knowledge-sharing sessions.</p>
-						<p><strong>Project Management:</strong> Partnered with Product Owner in sprint planning and task assignment for team members.</p>
-						<p><strong>Project Design:</strong> Designed and spearheaded architecture of data pipeline and high-scale platform projects.</p>
-						<p><strong>Internal Stakeholder Interactions:</strong> Delivered technical presentations and PoCs with business managers and directors.</p>
-						<p><strong>External Interactions:</strong> Worked with vendors and clients for API integration requirements.</p>
+				</div>
+				<div class="divider"></div>
+				<div class="content">
+					<div class="section-title">Leadership</div>
+					<div class="skill-groups">
+						<div class="skill-group">
+							<strong>Team Development</strong>
+							Mentoring, PR reviews, code reviews, technical knowledge sharing
+						</div>
+						<div class="skill-group">
+							<strong>Project Execution</strong>
+							Sprint planning, task breakdown, technical design, delivery coordination
+						</div>
+						<div class="skill-group">
+							<strong>Stakeholders</strong>
+							Technical presentations, PoCs, vendor and client integration discussions
+						</div>
 					</div>
 				</div>
 			</div>
