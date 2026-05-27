@@ -101,27 +101,28 @@
 		}
 
 		.left-column {
-			width: 62%;
+			width: 60%;
 		}
 
 		.right-column {
-			width: 34%;
+			width: 36%;
 		}
 
 		.certification-row {
 			display: table;
 			width: 100%;
-			margin-bottom: 0.5rem;
+			margin-bottom: 0.72rem;
 		}
 
 		.certification-row a {
 			display: table-cell;
-			padding: 0.5rem;
+			padding: 0.62rem 0.7rem;
 			text-decoration: none;
 			color: #007bff;
 			border: 1px solid #d8e4f2;
 			border-radius: 6px;
 			background: #f8fbff;
+			line-height: 1.35;
 		}
 
 		.certification-row a:hover {
@@ -185,9 +186,23 @@
 			margin-bottom: 1rem;
 		}
 
+		.divider-before-leadership {
+			margin-top: 1.85rem;
+			margin-bottom: 1.35rem;
+		}
+
+		.divider-before-skills {
+			margin-top: 1.35rem;
+			margin-bottom: 1.35rem;
+		}
+
+		.right-column .skill-groups {
+			gap: 0.76rem;
+		}
+
 		.skill-groups {
 			display: grid;
-			gap: 0.75rem;
+			gap: 0.62rem;
 		}
 
 		.skill-group {
@@ -195,8 +210,12 @@
 		}
 
 		.skill-group strong {
-			display: block;
-			margin-bottom: 0.14rem;
+			display: inline;
+			margin-bottom: 0;
+		}
+
+		.skill-group strong::after {
+			content: ": ";
 		}
 
 		@media (max-width: 900px) {
@@ -237,10 +256,15 @@
 			.job-details { margin-bottom: 0.92rem; }
 			.job-meta { margin-bottom: 0.28rem; }
 			.job-description li { margin-bottom: 3px; line-height: 1.36; }
-			.skill-groups { gap: 0.58rem; }
-			.skill-group { line-height: 1.36; }
-			.left-column { width: 64%; }
-			.right-column { width: 32%; }
+			.certification-row { margin-bottom: 0.52rem; }
+			.certification-row a { padding: 0.48rem 0.55rem; line-height: 1.28; }
+			.skill-groups { gap: 0.45rem; }
+			.right-column .skill-groups { gap: 0.58rem; }
+			.divider-before-skills { margin-top: 0.9rem; margin-bottom: 0.95rem; }
+			.divider-before-leadership { margin-top: 1.2rem; margin-bottom: 0.95rem; }
+			.skill-group { line-height: 1.33; }
+			.left-column { width: 61%; }
+			.right-column { width: 35%; }
 			.job-title { margin-right: 1rem; }
 			.job-timeline { margin-left: 2rem; }
 			h6 { margin: 0.35rem 0; }
@@ -402,67 +426,91 @@
 				<div class="content">
 					<div class="section-title">Certifications</div>
 					<div class="certification-row">
-						<a href="https://www.credly.com/badges/d1773ecc-297b-4ce5-bce1-a45889c3b09d/public_url" target="_blank" rel="noopener noreferrer">AWS Certified Machine Learning Engineer - Associate, 2025</a>
+						<a href="https://www.credly.com/badges/d1773ecc-297b-4ce5-bce1-a45889c3b09d/public_url" target="_blank" rel="noopener noreferrer">AWS Machine Learning Engineer - Associate, 2025</a>
 					</div>
 					<div class="certification-row">
-						<a href="https://www.credly.com/badges/6ee01952-67f4-4a1a-a348-1833b19fe827" target="_blank" rel="noopener noreferrer">AWS Certified DevOps Engineer - Professional, 2024</a>
+						<a href="https://www.credly.com/badges/6ee01952-67f4-4a1a-a348-1833b19fe827" target="_blank" rel="noopener noreferrer">AWS DevOps Engineer - Professional, 2024</a>
 					</div>
 					<div class="certification-row">
-						<a href="https://www.credly.com/badges/67b74128-9e24-4a48-b2fa-784128b10c7d" target="_blank" rel="noopener noreferrer">AWS Certified Solutions Architect - Professional, 2024</a>
+						<a href="https://www.credly.com/badges/67b74128-9e24-4a48-b2fa-784128b10c7d" target="_blank" rel="noopener noreferrer">AWS Solutions Architect - Professional, 2024</a>
 					</div>
 					<div class="certification-row">
-						<a href="https://www.credly.com/badges/0ec2b593-18f0-47ed-92a2-0a2484bbfb28" target="_blank" rel="noopener noreferrer">AWS Certified Developer - Associate, 2023</a>
+						<a href="https://www.credly.com/badges/0ec2b593-18f0-47ed-92a2-0a2484bbfb28" target="_blank" rel="noopener noreferrer">AWS Developer - Associate, 2023</a>
 					</div>
 				</div>
-				<div class="divider"></div>
+				<div class="divider divider-before-skills"></div>
 				<div class="content">
 					<div class="section-title">Skills</div>
 					<div class="skill-groups">
 						<div class="skill-group">
-							<strong>Backend</strong>
-							Python, Django, DRF, Flask, Ruby on Rails, REST APIs
+							<strong>Languages</strong>
+							Python, JavaScript/TypeScript, Ruby
+						</div>
+						<div class="skill-group">
+							<strong>Backend Frameworks</strong>
+							Django, DRF, Flask, Ruby on Rails
+						</div>
+						<div class="skill-group">
+							<strong>API Engineering</strong>
+							REST APIs, validation, test-driven API integration
 						</div>
 						<div class="skill-group">
 							<strong>Frontend</strong>
-							React, TypeScript, NextJS, HTML/CSS, Bootstrap
+							React, NextJS, HTML5/CSS, Bootstrap, Material UI, shadcn/ui, Tailwind CSS
 						</div>
 						<div class="skill-group">
-							<strong>AI / LLM</strong>
-							OpenAI API, AWS Bedrock, Cursor, MCP servers, agent workflows
+							<strong>AI / LLM Platforms</strong>
+							OpenAI API, AWS Bedrock
 						</div>
 						<div class="skill-group">
-							<strong>Cloud / DevOps</strong>
-							AWS, GCP, Kubernetes, Helm, ArgoCD, Terraform, Docker, GitHub Actions
+							<strong>AI-assisted Engineering</strong>
+							Prompt/workflow design, Cursor, Codex, GitHub Copilot, Antigravity, VS Code, MCP servers, agent skills
 						</div>
 						<div class="skill-group">
-							<strong>SRE / Observability</strong>
-							New Relic, Sentry, OpenSearch, Prometheus, Grafana, API performance testing
+							<strong>Cloud / AWS</strong>
+							AWS, GCP personal projects, EC2, S3, EBS, RDS, IAM, SAM, Lambda
 						</div>
 						<div class="skill-group">
-							<strong>Data Systems</strong>
-							PostgreSQL, MySQL, Redis, DynamoDB, MongoDB, Airflow, Kafka, Celery, Pandas
+							<strong>Platform / DevOps</strong>
+							Kubernetes, Helm, ArgoCD, Terraform, Docker, CI/CD, GitHub Actions, Jenkins, Nginx, Gunicorn, Supervisor, Fabric
 						</div>
 						<div class="skill-group">
-							<strong>Open Source</strong>
-							Apache Airflow, Ansible, Tethne
+							<strong>SRE Practices</strong>
+							Production reliability, on-call support, incident response, PagerDuty, API performance testing, runbooks
+						</div>
+						<div class="skill-group">
+							<strong>Observability</strong>
+							New Relic, Sentry, OpenSearch/Elasticsearch, Prometheus, Grafana
+						</div>
+						<div class="skill-group">
+							<strong>Datastores</strong>
+							PostgreSQL, MySQL, SQLite, MongoDB, Redis, DynamoDB
+						</div>
+						<div class="skill-group">
+							<strong>Data / Async</strong>
+							Airflow, Kafka, Celery, RabbitMQ, Hive, Impala, Pandas, Dask, NumPy
+						</div>
+						<div class="skill-group">
+							<strong>Open Source Contributions</strong>
+							Tethne, Ansible, Apache Airflow, WordPress Openverse
 						</div>
 					</div>
 				</div>
-				<div class="divider"></div>
+				<div class="divider divider-before-leadership"></div>
 				<div class="content">
 					<div class="section-title">Leadership</div>
 					<div class="skill-groups">
 						<div class="skill-group">
 							<strong>Team Development</strong>
-							Mentoring, PR reviews, code reviews, technical knowledge sharing
+							Mentoring, PR reviews, technical knowledge sharing
 						</div>
 						<div class="skill-group">
 							<strong>Project Execution</strong>
-							Sprint planning, task breakdown, technical design, delivery coordination
+							Sprint planning, task breakdown, technical design
 						</div>
 						<div class="skill-group">
 							<strong>Stakeholders</strong>
-							Technical presentations, PoCs, vendor and client integration discussions
+							Technical presentations, PoCs, integration discussions
 						</div>
 					</div>
 				</div>
